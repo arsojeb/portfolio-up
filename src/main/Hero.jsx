@@ -1,5 +1,5 @@
 import React from "react";
-import "/src/App.css";
+import "../App.css";
 
 const Hero = () => {
   return (
@@ -7,23 +7,26 @@ const Hero = () => {
 
       {/* Background stars */}
       <div className="absolute inset-0">
-        <div className="w-full h-full bg-[url('/src/assets/stars.png')] bg-cover bg-center animate-background-pan opacity-40"></div>
+        <div className="w-full h-full bg-[url('/stars.png')] bg-cover bg-center animate-background-pan opacity-40"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
         {/* Image / Photo */}
         <div className="flex justify-center md:justify-start">
-          <div className="relative group w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-4 border-transparent
-                          bg-linear-to-tr from-sky-400 via-purple-500 to-pink-400 shadow-2xl
-                          transform scale-90 opacity-0 animate-slide-up transition-transform duration-700 ease-out hover:scale-105">
-
+          <div
+            className="relative group w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-4 border-transparent
+                       bg-linear-to-tr from-sky-400 via-purple-500 to-pink-400 shadow-2xl
+                       transform scale-90 opacity-0 animate-slide-up transition-transform duration-700 ease-out hover:scale-105"
+          >
             {/* Floating Inner Photo */}
-            <div className="absolute inset-0 rounded-2xl bg-slate-800 shadow-2xl
-                            transform transition-transform duration-1000 ease-in-out
-                            group-hover:rotate-2 group-hover:translate-y-1 animate-float">
+            <div
+              className="absolute inset-0 rounded-2xl bg-slate-800 shadow-2xl
+                         transform transition-transform duration-1000 ease-in-out
+                         group-hover:rotate-2 group-hover:translate-y-1 animate-float"
+            >
               <img
-                src="/src/assets/me.png"
+                src="/me.png"
                 alt="Mohammad Abdur Rahaman"
                 className="w-full h-full object-cover rounded-2xl"
               />
@@ -34,18 +37,18 @@ const Hero = () => {
         {/* Text Content */}
         <div className="text-center md:text-left space-y-4">
 
-          {/* Name with typing + gradient effect */}
+          {/* Name */}
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-linear-to-r from-sky-400 via-purple-500 to-pink-400 drop-shadow-lg animate-typing">
             Mohammad <br />
             Abdur Rahaman
           </h1>
 
-          {/* Subtitle floating effect */}
+          {/* Subtitle */}
           <h2 className="text-xl md:text-2xl font-semibold text-slate-300 animate-float-slow opacity-0 animate-fade-up delay-500 drop-shadow-md">
             Frontend Web Developer
           </h2>
 
-          {/* Description with staggered fade-in */}
+          {/* Description */}
           <p className="text-slate-400 max-w-lg leading-relaxed">
             <span className="block opacity-0 animate-fade-up delay-700">
               I design and build modern, responsive, and user-friendly web experiences
@@ -55,13 +58,13 @@ const Hero = () => {
             </span>
           </p>
 
-          {/* Call to Actions */}
+          {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
             <a
               href="#projects"
               className="inline-flex items-center justify-center rounded-lg
                          bg-sky-400 px-6 py-3 font-medium text-slate-900
-                         opacity-0 animate-fade-up delay-1100 hover:bg-sky-300 hover:shadow-lg hover:scale-105 hover-pulse
+                         opacity-0 animate-fade-up delay-1100 hover:bg-sky-300 hover:shadow-lg hover:scale-105
                          transition transform duration-500 ease-out"
             >
               View Projects
@@ -71,7 +74,7 @@ const Hero = () => {
               href="#contact"
               className="inline-flex items-center justify-center rounded-lg
                          border border-slate-600 px-6 py-3 font-medium text-slate-200
-                         opacity-0 animate-fade-up delay-1300 hover:border-sky-400 hover:text-sky-400 hover:shadow-lg hover:scale-105 hover-pulse
+                         opacity-0 animate-fade-up delay-1300 hover:border-sky-400 hover:text-sky-400 hover:shadow-lg hover:scale-105
                          transition transform duration-500 ease-out"
             >
               Contact Me
