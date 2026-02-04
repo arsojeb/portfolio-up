@@ -19,7 +19,7 @@ const ContactMe = () => {
         {/* Social Links */}
         <div className="flex justify-center gap-6 mb-12">
           <a
-            href="www.linkedin.com/in/mohammad-abdur-rahaman"
+            href="https://www.linkedin.com/in/mohammad-abdur-rahaman"
             target="_blank"
             rel="noreferrer"
             className="p-4 rounded-full bg-slate-800 hover:bg-sky-400 hover:text-slate-900 transition transform hover:scale-110"
