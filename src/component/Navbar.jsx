@@ -45,7 +45,7 @@ const NavBar = () => {
               key={label}
               href={href}
               className="relative text-gray-300 hover:text-sky-400 transition font-medium
-                         after:absolute after:left-0 after:-bottom-1 after:h-[2px]
+                         after:absolute after:left-0 after:-bottom-1 after:h-0.5
                          after:w-0 after:bg-sky-400 after:transition-all after:duration-300
                          hover:after:w-full"
             >

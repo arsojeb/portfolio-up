@@ -1,13 +1,13 @@
 import './App.css';
 import CustomCursor from './CustomCursor';
-import NavBar from './component/NavBar';
+import Navbar from './component/Navbar'
 import Hero from './main/Hero';
 
 function App() {
   return (
     <>
       <CustomCursor />
-      <NavBar />
+      <Navbar />
       <Hero />
     </>
   );
