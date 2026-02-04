@@ -19,7 +19,7 @@ const ContactMe = () => {
         {/* Social Links */}
         <div className="flex justify-center gap-6 mb-12">
           <a
-            href="https://linkedin.com/in/your-linkedin"
+            href="https://linkedin.com/in/mohammad-abdur-rahaman"
             target="_blank"
             rel="noreferrer"
             className="p-4 rounded-full bg-slate-800 hover:bg-sky-400 hover:text-slate-900 transition transform hover:scale-110"
@@ -27,7 +27,7 @@ const ContactMe = () => {
             <FaLinkedin size={24} />
           </a>
           <a
-            href="https://github.com/your-github"
+            href="https://github.com/arsojeb"
             target="_blank"
             rel="noreferrer"
             className="p-4 rounded-full bg-slate-800 hover:bg-sky-400 hover:text-slate-900 transition transform hover:scale-110"
@@ -35,7 +35,7 @@ const ContactMe = () => {
             <FaGithub size={24} />
           </a>
           <a
-            href="https://facebook.com/your-facebook"
+            href="https://facebook.com/wizard003"
             target="_blank"
             rel="noreferrer"
             className="p-4 rounded-full bg-slate-800 hover:bg-sky-400 hover:text-slate-900 transition transform hover:scale-110"
@@ -48,7 +48,7 @@ const ContactMe = () => {
         <a
           href="mailto:abdurrahaman7042@gmail.com"
           className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold
-                     bg-gradient-to-r from-sky-400 via-purple-500 to-pink-400
+                     bg-linear-to-r from-sky-400 via-purple-500 to-pink-400
                      text-slate-900 text-lg
                      hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50
                      transition transform duration-300"
