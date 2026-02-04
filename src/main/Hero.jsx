@@ -3,7 +3,7 @@ import "/src/App.css";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center px-6 md:px-12 overflow-hidden bg-gradient-to-b from-[#0b0c2a] to-[#1b1d3b]">
+    <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center px-6 md:px-12 overflow-hidden bg-linear-to-b from-[#0b0c2a] to-[#1b1d3b]">
 
       {/* Background stars */}
       <div className="absolute inset-0">
@@ -15,7 +15,7 @@ const Hero = () => {
         {/* Image / Photo */}
         <div className="flex justify-center md:justify-start">
           <div className="relative group w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-4 border-transparent
-                          bg-gradient-to-tr from-sky-400 via-purple-500 to-pink-400 shadow-2xl
+                          bg-linear-to-tr from-sky-400 via-purple-500 to-pink-400 shadow-2xl
                           transform scale-90 opacity-0 animate-slide-up transition-transform duration-700 ease-out hover:scale-105">
 
             {/* Floating Inner Photo */}
@@ -35,7 +35,7 @@ const Hero = () => {
         <div className="text-center md:text-left space-y-4">
 
           {/* Name with typing + gradient effect */}
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-purple-500 to-pink-400 drop-shadow-lg animate-typing">
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-linear-to-r from-sky-400 via-purple-500 to-pink-400 drop-shadow-lg animate-typing">
             Mohammad <br />
             Abdur Rahaman
           </h1>
