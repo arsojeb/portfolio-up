@@ -19,7 +19,7 @@ const ContactMe = () => {
         {/* Social Links */}
         <div className="flex justify-center gap-6 mb-12">
           <a
-            href="https://linkedin.com/in/mohammad-abdur-rahaman"
+            href="www.linkedin.com/in/mohammad-abdur-rahaman"
             target="_blank"
             rel="noreferrer"
             className="p-4 rounded-full bg-slate-800 hover:bg-sky-400 hover:text-slate-900 transition transform hover:scale-110"
@@ -35,7 +35,7 @@ const ContactMe = () => {
             <FaGithub size={24} />
           </a>
           <a
-            href="https://facebook.com/wizard003"
+            href="https://www.facebook.com/wizard003"
             target="_blank"
             rel="noreferrer"
             className="p-4 rounded-full bg-slate-800 hover:bg-sky-400 hover:text-slate-900 transition transform hover:scale-110"
