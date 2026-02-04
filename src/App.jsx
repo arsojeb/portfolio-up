@@ -3,6 +3,7 @@ import CustomCursor from './CustomCursor';
 import Navbar from './component/Navbar'
 import About from './main/About';
 import Hero from './main/Hero';
+import MySkills from './main/MySkills';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <MySkills />
     </>
   );
 }

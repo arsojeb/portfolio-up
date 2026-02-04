@@ -29,13 +29,30 @@ const NavBar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-
         {/* Logo */}
         <a
           href="/"
-          className="text-2xl font-bold tracking-wide text-white select-none"
+          className="relative text-lg md:text-xl font-bold tracking-wide select-none
+             text-white hover:scale-105 transition-transform duration-300 ease-out
+             flex items-center gap-1"
         >
-          ARS<span className="text-sky-400">SOJEB</span>
+          {/* Initials / Prefix */}
+          <span className="text-white">MD.</span>
+
+          {/* Gradient Name */}
+          <span
+            className="bg-gradient-to-r from-sky-400 via-purple-500 to-pink-400 
+                   bg-clip-text text-transparent font-extrabold
+                   transition-all duration-500 group-hover:tracking-wider"
+          >
+            ABDUR RAHMAN
+          </span>
+
+          {/* Optional small animated underline for navbar */}
+          <span
+            className="absolute left-0 -bottom-1 w-full h-[2px] bg-sky-400 scale-x-0
+                   origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"
+          ></span>
         </a>
 
         {/* Desktop Navigation */}
