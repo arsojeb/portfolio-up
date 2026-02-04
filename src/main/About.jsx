@@ -112,7 +112,7 @@ const About = () => {
           <div className="flex justify-center mb-6">
             <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-3xl overflow-hidden border-4 border-transparent bg-gradient-to-tr from-sky-400 via-purple-500 to-pink-400 shadow-2xl transform scale-90 opacity-0 animate-slide-up hover:scale-105 transition">
               <div className="absolute inset-0 rounded-3xl bg-slate-800 shadow-2xl transform transition-transform duration-1000 ease-in-out animate-float hover:rotate-3 hover:translate-y-2">
-                <img src="/public/web.jpg" alt="Mohammad Abdur Rahaman" className="w-full h-full object-cover rounded-3xl" />
+                <img src="/web.jpg" alt="Mohammad Abdur Rahaman" className="w-full h-full object-cover rounded-3xl" />
               </div>
             </div>
           </div>
