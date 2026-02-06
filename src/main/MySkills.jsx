@@ -54,7 +54,7 @@ const MySkills = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-purple-500 to-pink-400">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-sky-400 via-purple-500 to-pink-400">
             My Skills
           </h2>
           <p className="mt-4 text-slate-400 max-w-2xl mx-auto">

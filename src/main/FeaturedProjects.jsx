@@ -7,9 +7,9 @@ const FeaturedProjects = () => {
       title: "Portfolio Website",
       description: "A personal portfolio website built with React, Tailwind CSS, and animations.",
       tech: ["React", "Tailwind CSS", "JavaScript"],
-      liveLink: "#",
-      githubLink: "#",
-      image: "https://via.placeholder.com/400x250.png?text=Portfolio",
+      liveLink: "ar-sojeb.vercel.app",
+      githubLink: "https://github.com/arsojeb/portfolio-up.git",
+      image: "Screenshot 2026-02-07 015508.png",
     },
     {
       title: "E-commerce App",
@@ -17,7 +17,7 @@ const FeaturedProjects = () => {
       tech: ["React", "Node.js", "MongoDB", "Express"],
       liveLink: "#",
       githubLink: "#",
-      image: "https://via.placeholder.com/400x250.png?text=E-commerce",
+      image: "puppymart.png",
     },
     {
       title: "Blog Platform",
@@ -25,7 +25,7 @@ const FeaturedProjects = () => {
       tech: ["React", "Node.js", "Express", "Tailwind CSS"],
       liveLink: "#",
       githubLink: "#",
-      image: "https://via.placeholder.com/400x250.png?text=Blog",
+      image: "/public/blood_donor.png",
     },
   ];
 
