@@ -5,8 +5,8 @@ import About from './main/About';
 import ContactMe from './main/ContactMe';
 import FeaturedProjects from './main/FeaturedProjects';
 import Footer from './main/Footer';
-import Hero from './main/Hero';
 import MySkills from './main/MySkills';
+import Intro from './component/Intro';
 import Achievement from './main/Achievement'; // ✅ ADD THIS LINE
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     <>
       <CustomCursor />
       <Navbar />
-      <Hero />
+      <Intro />
       <About />
       <MySkills />
       <Achievement />

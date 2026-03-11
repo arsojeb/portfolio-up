@@ -1,52 +1,53 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const CustomCursor = () => {
-  const [hovering, setHovering] = useState(false);
   const innerRef = useRef(null);
   const outerRef = useRef(null);
 
-  const position = useRef({ x: 0, y: 0 });
-  const outerPos = useRef({ x: 0, y: 0 });
+  const [hovering, setHovering] = useState(false);
+
+  const mouse = useRef({ x: 0, y: 0 });
+  const outer = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     const moveCursor = (e) => {
-      position.current = { x: e.clientX, y: e.clientY };
+      mouse.current = { x: e.clientX, y: e.clientY };
 
-      // Move inner cursor immediately
       if (innerRef.current) {
-        innerRef.current.style.transform = `translate(${position.current.x - 8}px, ${
-          position.current.y - 8
-        }px) rotate(45deg)`; // diamond shape
+        innerRef.current.style.transform = `translate(${mouse.current.x - 6}px,${
+          mouse.current.y - 6
+        }px)`;
       }
     };
 
-    // Hover detection
+    window.addEventListener("mousemove", moveCursor);
+
+    const hoverTargets = document.querySelectorAll("a, button");
+
     const addHover = () => setHovering(true);
     const removeHover = () => setHovering(false);
-    const hoverTargets = document.querySelectorAll("a, button");
 
     hoverTargets.forEach((el) => {
       el.addEventListener("mouseenter", addHover);
       el.addEventListener("mouseleave", removeHover);
     });
 
-    window.addEventListener("mousemove", moveCursor);
+    let frame;
 
-    // Outer cursor animation (rounded square)
-    let animationFrame;
-    const animateOuter = () => {
-      outerPos.current.x += (position.current.x - outerPos.current.x) * 0.2;
-      outerPos.current.y += (position.current.y - outerPos.current.y) * 0.2;
+    const animate = () => {
+      outer.current.x += (mouse.current.x - outer.current.x) * 0.15;
+      outer.current.y += (mouse.current.y - outer.current.y) * 0.15;
 
       if (outerRef.current) {
-        outerRef.current.style.transform = `translate(${outerPos.current.x - 15}px, ${
-          outerPos.current.y - 15
-        }px) scale(${hovering ? 1.5 : 1})`;
+        outerRef.current.style.transform = `translate(${outer.current.x - 20}px,${
+          outer.current.y - 20
+        }px) scale(${hovering ? 1.8 : 1})`;
       }
 
-      animationFrame = requestAnimationFrame(animateOuter);
+      frame = requestAnimationFrame(animate);
     };
-    animateOuter();
+
+    animate();
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
@@ -54,26 +55,30 @@ const CustomCursor = () => {
         el.removeEventListener("mouseenter", addHover);
         el.removeEventListener("mouseleave", removeHover);
       });
-      cancelAnimationFrame(animationFrame);
+      cancelAnimationFrame(frame);
     };
   }, [hovering]);
 
   return (
     <>
-      {/* Outer cursor: rounded square */}
+      {/* Outer Glow Ring */}
       <div
         ref={outerRef}
-        className={`fixed top-0 left-0 z-[9999] pointer-events-none
-          h-8 w-8 bg-sky-400 rounded-md opacity-50
-          transition-transform duration-150 ease-out`}
+        className="fixed top-0 left-0 z-[9999] pointer-events-none
+        w-10 h-10 rounded-full
+        border border-sky-400/60
+        backdrop-blur-sm
+        transition-transform duration-200
+        shadow-[0_0_15px_rgba(56,189,248,0.6)]"
       />
 
-      {/* Inner cursor: diamond */}
+      {/* Inner Dot */}
       <div
         ref={innerRef}
         className="fixed top-0 left-0 z-[9999] pointer-events-none
-          h-4 w-4 bg-white"
-        style={{ transform: "rotate(45deg)" }}
+        w-3 h-3 rounded-full
+        bg-gradient-to-r from-purple-500 to-sky-400
+        shadow-[0_0_10px_rgba(56,189,248,0.8)]"
       />
     </>
   );
