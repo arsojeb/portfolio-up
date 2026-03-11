@@ -77,7 +77,7 @@ const MySkills = () => {
               </h3>
 
               <div className="space-y-6">
-                {list.map((skill, i) => (
+                {list.map((skill,) => (
                   <div key={skill.name}>
                     <div className="flex items-center justify-between mb-1">
                       <div className="flex items-center gap-2 text-slate-200 font-medium transition group-hover:text-sky-400">
@@ -89,7 +89,7 @@ const MySkills = () => {
                     {/* Skill Progress Bar */}
                     <div className="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
                       <div
-                        className="h-2 rounded-full bg-gradient-to-r from-sky-400 via-purple-500 to-pink-400 transition-all duration-1500 ease-out"
+                        className="h-2 rounded-full bg-linear-to-r from-sky-400 via-purple-500 to-pink-400 transition-all duration-1500 ease-out"
                         style={{ width: visible ? `${skill.level}%` : "0%" }}
                       />
                     </div>
