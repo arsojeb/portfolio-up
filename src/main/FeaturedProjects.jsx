@@ -32,7 +32,7 @@ const FeaturedProjects = () => {
     },
   ];
 
-  const sectionRef = useRef();
+  const sectionRef = useRef(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -100,7 +100,7 @@ const FeaturedProjects = () => {
               </div>
 
               {/* CONTENT */}
-              <div className="p-6">
+              <div className="p-6 relative z-10">
 
                 <h3 className="text-xl font-bold text-white mb-2">
                   {project.title}
@@ -128,7 +128,7 @@ const FeaturedProjects = () => {
                   <a
                     href={project.liveLink}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm
                     bg-gradient-to-r from-purple-500 to-sky-400
                     px-4 py-2 rounded-lg text-white
@@ -140,7 +140,7 @@ const FeaturedProjects = () => {
                   <a
                     href={project.githubLink}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm
                     border border-slate-600 px-4 py-2 rounded-lg
                     text-slate-300 hover:text-sky-400 hover:border-sky-400
@@ -154,7 +154,7 @@ const FeaturedProjects = () => {
               </div>
 
               {/* HOVER GLOW */}
-              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-sky-400 via-purple-500 to-pink-400 opacity-0 blur-lg group-hover:opacity-20 transition duration-500"></div>
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-sky-400 via-purple-500 to-pink-400 opacity-0 blur-lg group-hover:opacity-20 transition duration-500 pointer-events-none"></div>
 
             </div>
           ))}
