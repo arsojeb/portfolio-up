@@ -26,7 +26,7 @@ const FeaturedProjects = () => {
       description:
         "A responsive Blood Donation platform with authentication and admin dashboard.",
       tech: ["React", "Node.js", "Express", "Tailwind CSS"],
-      liveLink: "https://bloodsavelife.netlify.app/",
+      liveLink: "https://blood-donor-frontend-new.vercel.app/",
       githubLink: "https://github.com/arsojeb/Blood-Donor-Frontend.git",
       image: "/blood_donor.png",
     },

@@ -35,10 +35,12 @@ const useInView = (ref, threshold = 0.2) => {
       { threshold }
     );
 
-    if (ref.current) observer.observe(ref.current);
+    const currentRef = ref.current;
+
+    if (currentRef) observer.observe(currentRef);
 
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      if (currentRef) observer.unobserve(currentRef);
     };
   }, [ref, threshold]);
 
@@ -98,7 +100,7 @@ const About = () => {
     >
       <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 
-        {/* LEFT: Story & Skills */}
+        {/* LEFT */}
         <div
           className={`space-y-8 transition-all duration-1000 ${
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
@@ -117,56 +119,50 @@ const About = () => {
           </p>
 
           <p className="text-slate-400 leading-relaxed">
-            I believe great UI is a balance of design, usability, and speed. I’m constantly improving through real-world projects and learning industry best practices.
+            I believe great UI is a balance of design, usability, and speed.
           </p>
 
           {/* Skills */}
           <div className="space-y-4">
             {skills.map((skill, i) => (
-              <SkillBar
-                key={i}
-                name={skill.name}
-                level={skill.level}
-                trigger={inView}
-              />
+              <SkillBar key={i} {...skill} trigger={inView} />
             ))}
           </div>
         </div>
 
-        {/* RIGHT: Floating Photo + Feature Cards */}
+        {/* RIGHT */}
         <div className="grid grid-cols-1 gap-6">
 
-          {/* Floating Photo */}
+          {/* Image */}
           <div className="flex justify-center mb-6">
             <div
-              className={`relative w-72 h-72 md:w-80 md:h-80 rounded-3xl overflow-hidden border-4 border-transparent bg-gradient-to-tr from-sky-400 via-purple-500 to-pink-400 shadow-2xl transform transition-all duration-1000 ${
+              className={`relative w-72 h-72 md:w-80 md:h-80 rounded-3xl overflow-hidden border-4 border-transparent bg-gradient-to-tr from-sky-400 via-purple-500 to-pink-400 shadow-2xl transition-all duration-1000 ${
                 inView ? "opacity-100 scale-100" : "opacity-0 scale-90"
               }`}
             >
-              <div className="absolute inset-0 rounded-3xl bg-slate-800 shadow-2xl transform transition-transform duration-1000 ease-in-out hover:rotate-3 hover:translate-y-2">
+              <div className="absolute inset-0 bg-slate-800 rounded-3xl hover:rotate-3 hover:translate-y-2 transition duration-700">
                 <img
                   src="/web.jpg"
-                  alt="Mohammad Abdur Rahaman"
+                  alt="profile"
                   className="w-full h-full object-cover rounded-3xl"
                 />
               </div>
             </div>
           </div>
 
-          {/* Feature Cards */}
+          {/* Features */}
           <div className="grid grid-cols-2 gap-6">
             {features.map((item, index) => (
               <div
                 key={item.title}
-                className={`group relative rounded-2xl p-6 bg-slate-900/50 backdrop-blur-md border border-slate-700 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 ${
+                style={{ transitionDelay: `${index * 0.2}s` }}
+                className={`group relative rounded-2xl p-6 bg-slate-900/50 backdrop-blur-md border border-slate-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-500 ${
                   inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
                 }`}
-                style={{ transitionDelay: `${index * 0.2}s` }}
               >
                 <h3 className="text-lg font-semibold text-sky-400">
                   {item.title}
                 </h3>
-
                 <p className="mt-2 text-slate-400 text-sm">{item.desc}</p>
 
                 <div className="absolute -inset-0.5 rounded-2xl blur opacity-0 group-hover:opacity-30 bg-gradient-to-r from-sky-400 via-purple-500 to-pink-400"></div>
@@ -174,27 +170,32 @@ const About = () => {
             ))}
           </div>
         </div>
-
       </div>
 
-      {/* Journey Timeline */}
+      {/* TIMELINE */}
       <div
-        className={`max-w-3xl mx-auto px-6 md:px-12 py-12 transition-all duration-1000 ${
+        className={`max-w-3xl mx-auto px-6 md:px-12 py-16 transition-all duration-1000 ${
           inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
         }`}
       >
-        <h3 className="text-2xl font-bold text-center text-slate-200 mb-10">
+        <h3 className="text-2xl md:text-3xl font-bold text-center text-slate-200 mb-12">
           My Journey
         </h3>
 
-        <div className="relative border-l border-slate-700 pl-8 space-y-10">
+        <div className="relative border-l-2 border-slate-700 pl-8 space-y-12">
           {journey.map((item) => (
-            <div key={item.year} className="relative">
-              <span className="absolute -left-2.5 top-1 w-5 h-5 bg-sky-400 rounded-full shadow-lg animate-ping-slow"></span>
+            <div key={item.year} className="relative group">
+              
+              {/* Dot */}
+              <span className="absolute -left-[11px] top-2 w-5 h-5 bg-sky-400 rounded-full shadow-lg animate-pulse group-hover:scale-125 transition"></span>
 
-              <h4 className="text-sky-400 font-semibold">{item.year}</h4>
+              <h4 className="text-sky-400 font-semibold text-lg">
+                {item.year}
+              </h4>
 
-              <p className="text-slate-400 mt-1">{item.text}</p>
+              <p className="text-slate-400 mt-2 leading-relaxed">
+                {item.text}
+              </p>
             </div>
           ))}
         </div>

@@ -7,8 +7,8 @@ import FeaturedProjects from './main/FeaturedProjects';
 import Footer from './main/Footer';
 import MySkills from './main/MySkills';
 import Intro from './component/Intro';
-import Achievement from './main/Achievement'; // ✅ ADD THIS LINE
-
+import Achievement from './main/Achievement';
+import GroupProject from './main/GroupProject';
 function App() {
   return (
     <>
@@ -18,6 +18,7 @@ function App() {
       <About />
       <MySkills />
       <Achievement />
+      <GroupProject />
       <FeaturedProjects />
       <ContactMe />
       <Footer />
