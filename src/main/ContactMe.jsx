@@ -46,12 +46,14 @@ const ContactMe = () => {
 
         {/* Send Email Button */}
         <a
-          href="mailto:abdurrahaman7042@gmail.com"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=abdurrahaman7042@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold
-                     bg-linear-to-r from-sky-400 via-purple-500 to-pink-400
-                     text-slate-900 text-lg
-                     hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50
-                     transition transform duration-300"
+             bg-gradient-to-r from-sky-400 via-purple-500 to-pink-400
+             text-slate-900 text-lg
+             hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50
+             transition transform duration-300"
         >
           📧 Send Email
         </a>

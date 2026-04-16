@@ -4,13 +4,13 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 const FeaturedProjects = () => {
   const projects = [
     {
-      title: "Portfolio Website",
+      title: "Food Delivery Website",
       description:
-        "A personal portfolio website built with React, Tailwind CSS, and animations.",
-      tech: ["React", "Tailwind CSS", "JavaScript"],
-      liveLink: "https://ar-sojeb.vercel.app",
-      githubLink: "https://github.com/arsojeb/portfolio-up.git",
-      image: "/Screenshot 2026-02-07 015508.png",
+        "A Frontend of Food Delivery website built with React, Tailwind CSS, and animations.",
+      tech: ["React", "Tailwind CSS", "JavaScript", "HTML"],
+      liveLink: "https://flavor-haven-frontend.vercel.app/",
+      githubLink: "https://github.com/arsojeb/Flavor-Haven-Frontend.git",
+      image: "/testora.png",
     },
     {
       title: "E-commerce App",
