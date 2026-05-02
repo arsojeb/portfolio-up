@@ -30,6 +30,24 @@ const FeaturedProjects = () => {
       githubLink: "https://github.com/arsojeb/Blood-Donor-Frontend.git",
       image: "/blood_donor.png",
     },
+    {
+      title: "E-commerce App",
+      description:
+        "A responsive E-commerce Frontend built with HTML, CSS, and JavaScript.",
+      tech: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+      liveLink: "https://hatim-web-page.vercel.app/",
+      githubLink: "https://github.com/arsojeb/assignment-3-etu.git",
+      image: "/HAtil.png",
+    },
+    {
+      title: "Playground App",
+      description:
+        "A responsive Playground App built with React and Tailwind CSS.",
+      tech: ["React", "Tailwind CSS"],
+      liveLink: "https://play-ground-beta.vercel.app/",
+      githubLink: "https://github.com/arsojeb/Playground-App.git",
+      image: "/PlayGround.png",
+    },
   ];
 
   const sectionRef = useRef(null);

@@ -173,33 +173,53 @@ const About = () => {
       </div>
 
       {/* TIMELINE */}
-      <div
-        className={`max-w-3xl mx-auto px-6 md:px-12 py-16 transition-all duration-1000 ${
-          inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-        }`}
-      >
-        <h3 className="text-2xl md:text-3xl font-bold text-center text-slate-200 mb-12">
-          My Journey
-        </h3>
+<div
+  className={`max-w-5xl mx-auto px-6 md:px-12 py-20 transition-all duration-700 ease-out ${
+    inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+  }`}
+>
+  <h3 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">
+    My Journey
+  </h3>
 
-        <div className="relative border-l-2 border-slate-700 pl-8 space-y-12">
-          {journey.map((item) => (
-            <div key={item.year} className="relative group">
+  <div className="relative">
+    {/* Vertical Line */}
+    <div className="absolute left-1/2 top-0 h-full w-[2px] bg-gradient-to-b from-sky-500/40 via-slate-700 to-transparent transform -translate-x-1/2"></div>
+
+    <div className="space-y-16">
+      {journey.map((item, index) => (
+        <div
+          key={`${item.year}-${index}`}
+          className={`relative flex flex-col md:flex-row items-center ${
+            index % 2 === 0 ? "md:flex-row-reverse" : ""
+          }`}
+        >
+          {/* Content Card */}
+          <div className="w-full md:w-1/2 px-4">
+            <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-6 shadow-lg hover:shadow-sky-500/20 hover:-translate-y-2 transition duration-300">
               
-              {/* Dot */}
-              <span className="absolute -left-[11px] top-2 w-5 h-5 bg-sky-400 rounded-full shadow-lg animate-pulse group-hover:scale-125 transition"></span>
-
-              <h4 className="text-sky-400 font-semibold text-lg">
+              <h4 className="text-sky-400 font-semibold text-lg mb-2">
                 {item.year}
               </h4>
 
-              <p className="text-slate-400 mt-2 leading-relaxed">
+              <p className="text-slate-300 leading-relaxed text-sm md:text-base">
                 {item.text}
               </p>
             </div>
-          ))}
+          </div>
+
+          {/* Timeline Dot */}
+          <div className="relative z-10 flex items-center justify-center w-10 h-10 bg-slate-900 border border-sky-400 rounded-full shadow-md">
+            <div className="w-3 h-3 bg-sky-400 rounded-full animate-ping"></div>
+          </div>
+
+          {/* Spacer */}
+          <div className="hidden md:block w-1/2"></div>
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+</div>
     </section>
   );
 };
